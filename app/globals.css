@@ -1,26 +1,72 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* global styling mainly for header, nav, and footer components*/
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #eeeeee;
+  color: #000000;
+  font-size: calc(14px + 0.3vw);
+}
+
+/* navbar */
+nav {
+  display: flex;
+  gap: calc(10px + 1vw);
+  padding: 15px 25px;
+  background-color: rgba(0, 0, 0, 0.78);
+  border-radius: 999px;
+  width: fit-content;
+  margin: 20px 20px 20px auto;
+}
+
+nav a {
+  color: #eeeeee;
+  text-decoration: none;
+  font-family: 'Anton', Impact, sans-serif;
+}
+
+#nav-home:hover {
+  color: #e1514c;
+}
+#nav-memegallery:hover {
+  color: #f6c82a;
+}
+#nav-about:hover {
+  color: #68c246;
+}
+
+/* header */
+h1 {
+  text-align: center;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: calc(28px + 1.6vw);
+  margin: 20px ;
+  padding-top: 20px;
+  color: #e1514c;
+
+}
+
+/* main */
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* footer */
+footer {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 250;
+  text-align: center;
+  padding: 15px;
+  margin: 20px auto 0 auto;  /*  center horizontally */
+  background-color: #e0dddd;
+  width: fit-content;
+  font-size: calc(12px + 0.3vw);
+  color: #000000;
+  border-radius: 999px;
+}
+
+footer a {
+  text-decoration: none;
+  color:  #68c246;
 }
