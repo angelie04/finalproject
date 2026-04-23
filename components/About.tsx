@@ -45,10 +45,14 @@ const Card = styled.div`
 
     h2 {
         margin: 0 0 8px;
+        font-family: 'Anton', Impact, sans-serif;
+        font-size: calc(14px + 0.5vw);
     }
 
     p {
         margin: 0;
+        font-family: 'Oswald', sans-serif;
+        font-size: calc(12px + 0.3vw);
     }
 `;
 
