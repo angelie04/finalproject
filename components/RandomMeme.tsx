@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import useSWR from "swr";
 import styled from "styled-components";
 import { Meme } from "@/app/types/meme";
+import DownloadMemeButton from "@/components/DownloadMemeButton";
  
  
 // centers the meme card and button on the page
@@ -47,6 +48,13 @@ const GenerateButton = styled.button`
     background-color: #e1514c;
     color: #ffffff;
 `;
+
+const ButtonRow = styled.div`
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+`;
  
 
 const fetcher = (url: string) =>
@@ -56,7 +64,6 @@ export default function RandomMeme() {
  
     // holds the meme being displayed
     const [currentMeme, setCurrentMeme] = useState<Meme | null>(null);
- 
     const { data, error } = useSWR("/api/getMemeData", fetcher);
  
     // gets a random meme from the list and sets it as the current meme
@@ -76,7 +83,7 @@ export default function RandomMeme() {
     if (!data || !currentMeme) return <p>Loading...</p>;
  
     const memes: Meme[] = data.data.memes || [];
- 
+
     return (
         <Wrapper>
             <MemeCard>
@@ -87,10 +94,13 @@ export default function RandomMeme() {
                 />
             </MemeCard>
  
-            {/* picks a new random meme */}
-            <GenerateButton onClick={() => pickRandom(memes)}>
-                Generate Meme
-            </GenerateButton>
+            <ButtonRow>
+                {/* picks a new random meme */}
+                <GenerateButton onClick={() => pickRandom(memes)}>
+                    Generate Meme
+                </GenerateButton>
+                <DownloadMemeButton meme={currentMeme} />
+            </ButtonRow>
         </Wrapper>
     );
 }
