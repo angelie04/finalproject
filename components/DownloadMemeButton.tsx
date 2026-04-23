@@ -10,17 +10,13 @@ const DownloadButton = styled.button`
     color: #ffffff;
 `;
 
-export default function DownloadMemeButton({ meme }: { meme: Meme | null }) {
+export default function DownloadMemeButton({ meme }: { meme: Meme }) {
     const handleDownload = async () => {
-        // If no meme is loaded
-        if (!meme) return;
         const filename = `${meme.name}.jpg`;
-
         try {
             const response = await fetch(meme.url);
             if (!response.ok) 
                 return;
-
             const blob = await response.blob();
             // Create a temporary local URL that points to that blob (Binary Large Object)
             // this is so we don't open a new tab to download the image
