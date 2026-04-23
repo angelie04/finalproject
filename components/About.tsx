@@ -57,7 +57,8 @@ const teamMembers = [
     {
         name: "Angelie Darbouze",
         image: "/static/angelie.jpg",
-        about: "temp",
+        about: "I built reusable components & a shared layout to structure this app " +
+            "(ie. Navbar, footer, and base layout across pages)!",
     },
     {
         name: "Michael Chu",
