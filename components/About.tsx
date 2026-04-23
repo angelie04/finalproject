@@ -4,6 +4,7 @@ export default function About() {
             {/* DaisyUI card component for displaying each team member */}
             <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6">
                 <details className="dropdown w-full">
+                    {/* using the dropdown summary to display the team member's name and image */}
                     <summary className="list-none cursor-pointer">
                         <div className="card h-full overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
                             <figure className="flex justify-center border-b border-black/10 bg-zinc-100 p-4">

@@ -18,14 +18,14 @@ export default function DownloadMemeButton({ meme }: { meme: Meme }) {
             if (!response.ok) 
                 return;
             const blob = await response.blob();
-            // Create a temporary local URL that points to that blob (Binary Large Object)
+            // Create temp local URL that points to that blob (images and other files)
             // this is so we don't open a new tab to download the image
             const objectUrl = URL.createObjectURL(blob);
-            // Create a temporary anchor tag to trigger browser download.
+            // create temp anchor tag to trigger browser download.
             const link = document.createElement("a");
             link.href = objectUrl;
             link.download = filename;
-            // Add anchor, click it, then remove it.
+            // Add anchor click it to download
             document.body.appendChild(link);
             link.click();
             link.remove();
