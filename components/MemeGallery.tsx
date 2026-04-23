@@ -5,24 +5,29 @@ import styled from "styled-components";
 
 const AllMemesDiv=styled.div`
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
     
+    align-self: center;
+    justify-self: center;
    
     
     align-content: center;
+    
   
    
     width: 80vw;
 `;
 
 const MemeImg = styled.img`
-    width: 200px;
-    height: 150px;
+    width: 100%;
+    
+    
 
 `
 const MemeDiv = styled.div`
     text-align: center;
     border: 8px ridge red;
+    align-content: center;
  
    background-color: white;
 
