@@ -1,74 +1,97 @@
-export default function About() {
-    const teamMembers = [
-        {
-            name: "Angelie Darbouze",
-            image: "/static/angelie.jpg",
-            about: "temp",
-            github: "#",
-            linkedin: "#",
-        },
-        {
-            name: "Michael Chu",
-            image: "/static/michael.jpg",
-            about: "I created the About page and the download image function",
-            github: "https://github.com/mchu64",
-            linkedin: "https://www.linkedin.com/in/michael-y-chu/",
-        },
-        {
-            name: "Chelsea Nnanyanzi",
-            image: "/static/chelsea.jpg",
-            about: "temp",
-            github: "#",
-            linkedin: "#",
-        },
-        {
-            name: "George Audi",
-            image: "/static/george.jpg",
-            about: "temp",
-            github: "#",
-            linkedin: "#",
-        },
-    ];
+import styled from "styled-components";
 
+const Section = styled.section`
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 32px 24px;
+`;
+
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+`;
+
+const Card = styled.div`
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+    figure {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 16px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: #f4f4f5;
+    }
+
+    img {
+        width: 176px;
+        height: 176px;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        object-position: top;
+    }
+
+    div {
+        padding: 16px;
+        text-align: center;
+    }
+
+    h2 {
+        margin: 0 0 8px;
+    }
+
+    p {
+        margin: 0;
+    }
+`;
+
+const teamMembers = [
+    /* Array to hold info for each team member */
+    {
+        name: "Angelie Darbouze",
+        image: "/static/angelie.jpg",
+        about: "temp",
+    },
+    {
+        name: "Michael Chu",
+        image: "/static/michael.jpg",
+        about: "I created the About page and the download image function",
+    },
+    {
+        name: "Chelsea Nnanyanzi",
+        image: "/static/chelsea.png",
+        about: "temp",
+    },
+    {
+        name: "George Audi",
+        image: "/static/george.jpg",
+        about: "temp",
+    },
+];
+
+export default function About() {
     return (
-        <section className="mx-auto max-w-6xl px-6 py-12">
-            {/* DaisyUI card component for displaying each team member */}
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6">
+        <Section>
+            <Grid>
                 {teamMembers.map((member) => (
-                    <details key={member.name} className="dropdown w-full">
-                        {/* using the dropdown summary to display the team member's name and image */}
-                        <summary className="list-none cursor-pointer">
-                            <div className="card h-full overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
-                                <figure className="flex justify-center border-b border-black/10 bg-zinc-100 p-4">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="h-44 w-44 rounded-full border border-black/10 object-cover object-top"
-                                    />
-                                </figure>
-                                <div className="card-body items-center text-center">
-                                    <h2 className="card-title">{member.name}</h2>
-                                    <p>{member.about}</p>
-                                </div>
-                            </div>
-                        </summary>
-                        <ul className="dropdown-content menu z-10 mt-2 w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow">
-                            <li>
-                                <a href={member.github} className="flex items-center gap-2">
-                                    <img src="/static/github.png" alt="GitHub" className="h-4 w-4" />
-                                    GitHub
-                                </a>
-                            </li>
-                            <li>
-                                <a href={member.linkedin} className="flex items-center gap-2">
-                                    <img src="/static/linkedin.png" alt="LinkedIn" className="h-4 w-4" />
-                                    LinkedIn
-                                </a>
-                            </li>
-                        </ul>
-                    </details>
+                    <Card key={member.name}>
+                        <figure>
+                            <img src={member.image} alt={member.name} />
+                        </figure>
+                        <div>
+                            <h2>{member.name}</h2>
+                            <p>{member.about}</p>
+                        </div>
+                    </Card>
                 ))}
-            </div>
-        </section>
+            </Grid>
+        </Section>
     );
 }

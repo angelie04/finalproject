@@ -1,6 +1,5 @@
 /* global styling mainly for header, nav, and footer components*/
 @import "tailwindcss";
-@plugin "daisyui";
 
 body {
   margin: 0;
