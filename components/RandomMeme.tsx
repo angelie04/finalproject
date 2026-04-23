@@ -30,6 +30,7 @@ const MemeCard = styled.div`
 // meme name displayed above the image
 const MemeName = styled.h2`
     font-size: calc(14px + 0.5vw);
+    font-family: 'Anton', Impact, sans-serif;
     margin: 12px;
 `;
  
@@ -47,7 +48,14 @@ const GenerateButton = styled.button`
     border-radius: 999px;
     background-color: #e1514c;
     color: #ffffff;
+    font-family: 'Anton', Impact, sans-serif;
+    &:hover {
+        background-color: rgb(255, 255, 255);
+        color: #e1514c;
+    }
 `;
+
+
 
 const ButtonRow = styled.div`
     display: flex;
