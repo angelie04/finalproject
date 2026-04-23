@@ -73,7 +73,7 @@ const teamMembers = [
     {
         name: "George Audi",
         image: "/static/george.jpg",
-        about: "temp",
+        about: "I created the Random Meme component that fetches and displays a random meme on the home page, along with a button to generate a new random meme.",
     },
 ];
 
