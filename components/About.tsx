@@ -12,6 +12,7 @@ const Grid = styled.div`
     gap: 24px;
 `;
 
+// the card component is used to display the team member's information. Figure has image, div has name and what we did
 const Card = styled.div`
     height: 100%;
     overflow: hidden;
@@ -67,7 +68,7 @@ const teamMembers = [
     {
         name: "Michael Chu",
         image: "/static/michael.jpg",
-        about: "I created the About page and the download image function",
+        about: "I created the About page, the card component, and the Download Meme functionality!",
     },
     {
         name: "Chelsea Nnanyanzi",
@@ -86,6 +87,7 @@ export default function About() {
         <Section>
             <Grid>
                 {teamMembers.map((member) => (
+                    // use a map to iterate through the teammembers array and create a card for each member
                     <Card key={member.name}>
                         <figure>
                             <img src={member.image} alt={member.name} />
