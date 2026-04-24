@@ -72,7 +72,7 @@ const teamMembers = [
     {
         name: "Chelsea Nnanyanzi",
         image: "/static/chelsea.png",
-        about: "I created the Meme Gallery component that fetches and displays all the memes",
+        about: "I created the Meme Gallery component that fetches and displays all the memes and the MemePage component that displays an individual meme when you click on a meme from the gallery.",
     },
     {
         name: "George Audi",
