@@ -1,7 +1,9 @@
 //created by Chelsea Nnanyanzi
-// this file contains the component that renders and displays the API
+// this file contains the component that renders and displays the API data
+// in a gallery style format
 import {Meme} from "@/app/types/meme";
 import styled from "styled-components";
+import Link from 'next/link'
 
 //custom in file component styling with styled-components
 const AllMemesDiv=styled.div`
@@ -53,17 +55,21 @@ export default function MemeGallery(props:{memes:Meme[]}) {
         <AllMemesDiv>
             {
                 //memes are received from and are mapped to their unique ids
-                props.memes.map((meme:Meme) =>
-                <MemeDiv key={meme.id}>
+                props.memes.map((meme:Meme) => (
+                    <Link href={`/memes/${meme.id}`}  key={meme.id}>
 
-                    {/*use curly brackets and the meme JSON's key to access and
-                    display the values of the name and image*/}
-                    <MemeText>{meme.name}</MemeText>
-                    <figure>
-                    <MemeImg src={meme.url} alt={`meme about ${meme.name}`}/>
-                    </figure>
+                    <MemeDiv>
 
-                </MemeDiv>)
+                        {/*use curly brackets and the meme JSON's key to access and
+                        display the values of the name and image*/}
+                        <MemeText>{meme.name}</MemeText>
+                        <figure>
+                        <MemeImg src={meme.url} alt={`meme about ${meme.name}`}/>
+                        </figure>
+
+                    </MemeDiv>
+                    </Link>
+                ))
             }
         </AllMemesDiv>
 
