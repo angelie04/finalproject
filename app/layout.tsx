@@ -17,7 +17,7 @@ export default function RootLayout({
         <Link id="nav-about" href="/about">About Us</Link>
       </nav>
 
-      <h1>Meme Generator</h1>
+      <h1><Link id="nav-home" href="/">Meme Generator</Link></h1>
 
       {/*where the page.tsx files for about, memegallery, and randommeme will be */}
       <main>{children}</main>
