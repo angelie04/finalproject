@@ -1,3 +1,4 @@
+// Angelie Darbouze; I completed the layout.tsx page. This is where the base components are displayed on all pages
 // Header, nav, and footer
 import Link from 'next/link';
 import React from "react";
@@ -19,7 +20,7 @@ export default function RootLayout({
 
       <h1><Link id="nav-home" href="/">Meme Generator</Link></h1>
 
-      {/*where the page.tsx files for about, memegallery, and randommeme will be */}
+      {/*where the page.tsx files for about, memegallery, and random meme will be */}
       <main>{children}</main>
 
       <footer>

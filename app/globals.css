@@ -1,3 +1,5 @@
+/*Angelie Darbouze; I created styling for the header, nav and footer components on every page.
+Styling is being called in layout.tsx */
 /* global styling mainly for header, nav, and footer components*/
 @import "tailwindcss";
 
