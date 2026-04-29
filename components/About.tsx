@@ -1,3 +1,5 @@
+//created by Michael Chu
+// this file contains the about page component that displays the team members and their contributions to the project
 import styled from "styled-components";
 
 const Section = styled.section`

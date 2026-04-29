@@ -1,3 +1,6 @@
+//created by Michael Chu
+// this file contains the download meme button component that allows the user to download the meme to the system as jpg file
+
 import styled from "styled-components";
 import { Meme } from "@/app/types/meme";
 
@@ -22,8 +25,9 @@ export default function DownloadMemeButton({ meme }: { meme: Meme }) {
             const response = await fetch(meme.url);
             if (!response.ok) 
                 return;
+            //create blob from response so we can avoid opening a new tab to download the image
             const blob = await response.blob();
-            // Create temp local URL that points to that blob (images and other files)
+            // Create temp local URL that points to blob
             // this is so we don't open a new tab to download the image
             const objectUrl = URL.createObjectURL(blob);
             // create temp anchor tag to trigger browser download.
